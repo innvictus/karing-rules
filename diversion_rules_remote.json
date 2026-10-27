@@ -1,0 +1,28 @@
+{
+  "rules": [
+    {
+      "name": "AI-QUIC-BLOCK-REMOTE",
+      "outbound": "block",
+      "switch": true,
+      "or": false,
+      "network": [
+        "udp"
+      ],
+      "port": [
+        443
+      ],
+      "rule_set": [
+        "https://raw.githubusercontent.com/innvictus/karing-rules/main/ai-domains.ruleset.json"
+      ]
+    },
+    {
+      "name": "AI-RESIDENTIAL-REMOTE",
+      "outbound": "block",
+      "switch": true,
+      "or": true,
+      "rule_set": [
+        "https://raw.githubusercontent.com/innvictus/karing-rules/main/ai-domains.ruleset.json"
+      ]
+    }
+  ]
+}
